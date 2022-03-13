@@ -1,7 +1,0 @@
-export const GET_ALL_PRODUCTS = 'GET_ALL_PRODUCTS';
-export const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS';
-
-export default constants = {
-    GET_ALL_PRODUCTS : 'GET_ALL_PRODUCTS',
-    RECEIVE_PRODUCTS : 'RECEIVE_PRODUCTS'
-}

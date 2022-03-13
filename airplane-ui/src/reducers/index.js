@@ -1,17 +1,17 @@
 import logger from 'redux-logger';
 import { applyMiddleware, createStore, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import productReducer from './productReducer';
+import airplaneReducer from './airplaneReducer';
 import createSagaMiddleware from 'redux-saga'
-import { watchGetProducts } from '../sagas';
+import { watchGetAirplanes } from '../sagas';
 
 const rootReducer = () => {
   return combineReducers({
-    productReducer
+    airplaneReducer
   });
 }
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(rootReducer(),  compose(applyMiddleware(logger), applyMiddleware(thunk), applyMiddleware(sagaMiddleware)));
-sagaMiddleware.run(watchGetProducts);
+sagaMiddleware.run(watchGetAirplanes);
 
 export default store;

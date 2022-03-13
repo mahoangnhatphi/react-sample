@@ -1,21 +1,21 @@
 const actions = {
     
-    getAllProducts() {
+    getAllAirplanes() {
         return {
-            type: GET_ALL_PRODUCTS,
+            type: GET_ALL_PASSENGERS,
         }
     },
 
-    receiveProducts(products) {
+    receivePassengers(passengers) {
         return {
-            type: RECEIVE_PRODUCTS,
-            payload: products,
+            type: RECEIVE_PASSENGERS,
+            payload: passengers,
         }
     }
 };
 
-export const GET_ALL_PRODUCTS = 'GET_ALL_PRODUCTS';
-export const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS';
+export const GET_ALL_PASSENGERS = 'GET_ALL_PASSENGERS';
+export const RECEIVE_PASSENGERS = 'RECEIVE_PASSENGERS';
 
 
 export default actions;

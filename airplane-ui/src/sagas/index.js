@@ -1,19 +1,14 @@
 import { api } from "../services"
 import { take, put, call, fork, select, takeEvery, all } from 'redux-saga/effects';
-import actions from "../actions";
+import actions, { GET_ALL_PASSENGERS } from "../actions";
 
-export function* getAllProducts() {
-    const products = yield call(api.getProducts)
-    console.log('products', products);
-    yield put(actions.receiveProducts(products))
+export function* getAllPassengers() {
+    const passengers = yield call(api.getPassengers);
+    console.table(passengers);
+    yield put(actions.receivePassengers(passengers))
 }
 
-export function* watchGetProducts() {
-    console.log('Run watchGetProducts');
-    yield takeEvery('GET_ALL_PRODUCTS', getAllProducts)
-}
-
-
-export default function* root() {
-    yield all([fork(watchGetProducts)])
+export function* watchGetAirplanes() {
+    console.log('Run watchGetAirplanes');
+    yield takeEvery(GET_ALL_PASSENGERS, getAllPassengers)
 }
